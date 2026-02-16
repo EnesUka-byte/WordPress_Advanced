@@ -1,0 +1,39 @@
+/*
+
+Theme Name: DS THeme
+Theme URI: https://digitalschool.eu/prishtine/
+Author: Digital School
+Author URI: https://digitalschool.eu/prishtine/
+Description: A basic custom theme for learning purposes
+Version: 1.0
+License: GNU General Public License
+License URI: https://digitalschool.eu/prishtine/
+Text Domain: ds-theme
+Tags: education, basic-theme
+*/
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+header{
+background: #111;
+color: white;
+padding: 20px;
+text-align: center;
+
+
+}
+
+main{
+    padding: 40px;
+}
+
+footer{
+    background: #f4f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
