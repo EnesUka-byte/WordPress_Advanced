@@ -28,7 +28,7 @@ wp_enqueue_style(
     get_template_directory_uri().'/js/slider.css',
     array('jquery'),
     '1.0',
-    'all'
+    'all',
     true
 
 );
@@ -42,5 +42,20 @@ wp_enqueue_style(
 }
 
 add_action('wp_enqueue_scripts','ds_theme_assets');
+
+function ds_setup(){
+    //kem me leju me pas meny
+    add_theme_support('menu');
+
+    //register primary menu
+
+    register_nav_menu('primary','Primary menu');
+    
+}
+
+
+add_action('init','ds_setup');
+
+
 
 ?>
