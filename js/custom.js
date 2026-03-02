@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
-    console.log("hello there");
+    console.log("Custom JS Loaded Successfully");
+
     $('h2').click(function() {
-        alert("you clicked the heading");
+        alert("You clicked the heading!");
     });
 });

@@ -1,108 +1,43 @@
 /*
-
-Theme Name: DS THeme
-Theme URI: https://digitalschool.eu/prishtine/
+Theme Name: DS Theme
+Theme URI: https://digitalschool.com
 Author: Digital School
-Author URI: https://digitalschool.eu/prishtine/
-Description: A basic custom theme for learning purposes
+Author URI: https://digitalschool.com
+Description: A basic custom theme for learning purposes.
 Version: 1.0
-License: GNU General Public License
-License URI: https://digitalschool.eu/prishtine/
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ds-theme
 Tags: education, basic-theme
 */
 
-body{
+/* Basic styling */
+
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-
 }
 
-header{
-background: #111;
-color: white;
-padding: 20px;
-text-align: center;
-
-
-}
-
-main{
-    padding: 40px;
-}
-
-
-
-
-
-footer{
-    background: #f4f4f4f4;
+header {
+    background: #111;
+    color: white;
     padding: 20px;
     text-align: center;
 }
 
-nav {
-  background-color: #333;
-  overflow: hidden;
+main {
+    padding: 40px;
 }
 
-/* NAVBAR CONTAINER */
-nav {
-  background: linear-gradient(90deg, #111, #222);
-  padding: 0 40px;
+footer {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
 }
-
-/* Remove default ul styling from wp_nav_menu */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center; /* center menu items */
-  align-items: center;
+article {
+  padding: 20px;
+  margin: 20px 0;
+  background: #fff;
+  border: 1px solid #ddd;
 }
-
-/* Each menu item */
-nav li {
-  margin: 0 15px;
-}
-
-/* Links */
-nav a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 15px 10px;
-  font-size: 16px;
-  font-weight: 500;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-nav a:hover {
-  color: #04AA6D;
-}
-
-/* Underline animation */
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #04AA6D;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Active menu item (WordPress automatically adds .current-menu-item) */
-nav .current-menu-item a {
-  color: #04AA6D;
-}
-
