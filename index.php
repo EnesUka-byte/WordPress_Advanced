@@ -54,7 +54,6 @@
     </div>
 </div>
 
-
-<?php get_sidebar('primary');?>
+<?php get_sidebar('primary'); ?>
 
 <?php get_footer(); ?>
