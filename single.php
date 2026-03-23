@@ -3,74 +3,70 @@
 <div class="container my-5">
 
 <?php
-if (have_posts()) :
-    while (have_posts()) : the_post();
-?>
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+    ?>
 
-<div class="row justify-content-center">
-<div class="col-lg-8">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
 
-<article class="single-post card shadow-sm">
+             <article class="card shadow-sm border-0">
 
-<div class="card-body">
+                <!-- Featured Image -->
+                <?php if ( has_post_thumbnail() ) : ?>
+                     <div class="card-img-top">
+                        <?php the_post_thumbnail('large', ['class' => 'img-fluid w-100']); ?>
+                    </div>
+                <?php endif; ?>
 
-    <!-- Post Title -->
-    <h1 class="card-title text-primary mb-3">
-        <?php the_title(); ?>
-    </h1>
+                <div class="card-body">
 
-    <!-- Featured Image -->
-    <?php if (has_post_thumbnail()) : ?>
-        <div class="post-image mb-4">
-            <?php the_post_thumbnail('large', ['class' => 'img-fluid rounded']); ?>
+                    <!-- Title -->
+                    <h1 class="card-title mb-3">
+                        <?php the_title(); ?>
+                    </h1>
+
+                    <!-- Post Meta -->
+                    <div class="text-muted mb-4 small">
+                        <span>Published: <?php echo get_the_date(); ?></span> |
+                        <span>Author: <?php the_author(); ?></span> |
+                        <span>Category: <?php the_category(', '); ?></span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="post-content mb-4">
+                        <?php the_content(); ?>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="mb-3">
+                        <strong>Tags:</strong>
+                        <?php the_tags('', ', ', ''); ?>
+                    </div>
+
+                    <!-- Edit Link -->
+                    <div>
+                        <?php edit_post_link('Edit this post', '<p>', '</p>'); ?>
+                    </div>
+
+                </div>
+             </article>
+
+                <!-- Comments -->
+            <div class="mt-5">
+                <?php
+                if ( comments_open() || get_comments_number() ) :   comments_template();
+                endif;
+                ?>
+            </div>
+
         </div>
-    <?php endif; ?>
-
-    <!-- Categories -->
-    <div class="post-categories mb-3">
-        <strong>Categories:</strong>
-        <span class="badge bg-primary">
-            <?php the_category('</span> <span class="badge bg-primary">'); ?>
-        </span>
     </div>
 
-    <!-- Content -->
-    <div class="post-content mb-4">
-        <?php the_content(); ?>
-    </div>
-
-    <!-- Tags -->
-    <div class="post-tags mb-3">
-        <strong>Tags:</strong>
-        <?php the_tags(
-            '<span class="badge bg-secondary me-1">',
-            '</span><span class="badge bg-secondary me-1">',
-            '</span>'
-        ); ?>
-    </div>
-
-    <!-- Edit link -->
-    <div class="edit-link">
-        <?php edit_post_link('Edit this post', '<p class="text-end">', '</p>'); ?>
-    </div>
-
-</div>
-
-</article>
-
-</div>
-</div>
-
-<?php
-if (comments_open() || get_comments_number()) :
-    comments_template();
-endif;
-?>
-
-<?php
-endwhile;
-endif;
-?>
+    <?php
+    endwhile;
+    endif;
+    ?>
 
 </div>
 

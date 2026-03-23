@@ -4,6 +4,7 @@
     <h2>Hello Digital School Students</h2>
     <p>This is our custom WordPress theme.</p>
 </main>
+
 <?php if ( have_posts() ) : ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
@@ -24,8 +25,19 @@
 
     <?php endwhile; ?>
 
-<?php endif; ?>
+    <div class="pagination">
+        <?php the_posts_pagination( array(
+            'mid_size'  => 2,
+            'prev_text' => '« Previous',
+            'next_text' => 'Next »',
+        ) ); ?>
+    </div>
 
+<?php else : ?>
+
+    <p>No posts found.</p>
+
+<?php endif; ?>
 
 <div class="container">
     <h1 class="text-center text-primary">Bootstrap is Working</h1>
@@ -43,7 +55,6 @@
     </div>
 </div>
 
-
 <div class="container mt-4">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
@@ -55,5 +66,4 @@
 </div>
 
 <?php get_sidebar('primary'); ?>
-
 <?php get_footer(); ?>

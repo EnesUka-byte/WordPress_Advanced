@@ -128,4 +128,15 @@ function register_foo_widget() {
     register_widget( 'Foo_Widget' );
 }
 add_action( 'widgets_init', 'register_foo_widget' );
+
+
+
+
+
+function my_limit_posts_on_index($query) {
+    if ( !is_admin() && $query->is_main_query() && is_home() ) {
+        $query->set('posts_per_page', 5);
+    }
+}
+add_action('pre_get_posts', 'my_limit_posts_on_index');
 ?>
